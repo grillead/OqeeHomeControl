@@ -13,8 +13,8 @@ shell_exec('adb shell monkey -p com.canal.android.canal 1');
 else 
 {
 $cmd=$_GET["cmd"];
-$num=str_split($cmd);
-shell_exec("adb shell input keyevent KEYCODE_'".$num[0]."' input keyevent KEYCODE_'".$num[1]."' input keyevent KEYCODE_'".$num[2]."'");
+//$num=str_split($cmd);
+shell_exec("adb shell input text '".$cmd."' ");
 }
 
 shell_exec('adb shell exit');
