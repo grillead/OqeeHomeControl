@@ -8,7 +8,7 @@ include 'config.php';
 
 $_GET["cmd"] = isset($_GET['cmd']) ? $_GET['nom'] : null ;
 $_GET["nom"] = isset($_GET['nom']) ? $_GET['nom'] : null ;
-$nom = isset($_GET['nom']) ? $_GET['nom'] : null ;
+$nombrut = isset($_GET['nom']) ? $_GET['nom'] : null ;
 $cmd = isset($_GET['cmd']) ? $_GET['nom'] : null ;
 
 
@@ -34,13 +34,19 @@ $num=$_GET["cmd"];
 goto zap ;
 }
 
-if ($nom != NULL) 
+if ($nombrut != NULL) 
 {
-//req chaine<>numeros
-$sqlnum = "SELECT `free` FROM `chaines` WHERE `nom` = '$nom' ";
+//req chaine<>numeros convertie les espace %20 en %
+echo $nombrut;
+$nom = str_replace(" ", "%", $nombrut );
+echo $nom ;
+
+$sqlnum = "SELECT `free` FROM `chaines` WHERE `nom` like '$nom' ";
+echo $sqlnum;
 $resultnum = mysql_query($sqlnum)  ;
 $chaine = mysql_fetch_array($resultnum);
 $num = $chaine['free'];
+echo $num;
 goto zap ;
 }
 
