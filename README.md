@@ -3,9 +3,13 @@
 Plugin pour contrôler les freebox "android" (Mini4K et POP) avec Google Home (Changement de chaine via leur Nom)
 Les fonctions volume/extiction sont gérer en natif via google si vous avez ajouter la box à votre compte home.
 Nécessite : 
+
   L'activation du mode développeurs et du Débogage USB sur la box
+  
   La mise en place d'une VM sur le serveur delta pour faire tourné les outils adb,php,mysql( je pourrais fournir l'image pre-configurer apres une période de test)
+  
   La création d'un applet sur ifttt pour lancer les chaines avec leurs noms.
+  
   
 -----Partie Freebox Delta Serveur -----
 
