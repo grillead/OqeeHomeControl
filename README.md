@@ -8,11 +8,13 @@ Nécessite :
   La création d'un applet sur ifttt pour lancer les chaines avec leurs noms.
   
 -----Partie Freebox Delta Serveur -----
+
 Mettre en place l image de la VM et la demarrer (liens vers la vm à venir ultérieurement)
 Assigner un bail dhcp à la VM.
 Dans l interface freebox : Paramètre de la Freebox \ Gestion des ports => Ouvrir le port externe "1122 vers le port interne "1122" de la vm
 
------Partie Player----- 
+-----Partie Player-----
+
 Activation mod dev : 
 Appuie 7 fois sur la touche "ok" sur le numeros de build dans la section "A propos"
 Débogage USB:
@@ -22,6 +24,7 @@ Un popup va s'afficher sur la box au moment de l envoie de la 1ere commande voca
 il faut cocher la case se souvenir et autoriser la connexion une 1ere fois.
 
 -----Creation applet IFTTT -----
+
 Créer un applet "If This" Google Assistant > Phrase with TEXT incredient  (exemple chez moi : zappe sur la chaine $)
                 "Then That" WebHooks vers l url : http://ip_de_la_box:1122/freebox.php?nom={{TextField}}
                 
