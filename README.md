@@ -31,9 +31,11 @@ Un popup va s'afficher sur la box au moment de l envoie de la 1ere commande voca
 
 il faut cocher la case se souvenir et autoriser la connexion une 1ere fois.
 
------Creation applet IFTTT -----
+-----Création applet IFTTT -----
 
-Créer un applet "If This" Google Assistant > Phrase with TEXT incredient  (exemple chez moi : zappe sur la chaine $)
+Créer un applet 
+
+                "If This" Google Assistant > Phrase with TEXT incredient  (exemple chez moi : zappe sur la chaine $)
 
                 "Then That" WebHooks vers l url : http://ip_de_la_box:1122/freebox.php?nom={{TextField}}
                 
