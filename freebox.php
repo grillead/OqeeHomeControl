@@ -1,11 +1,6 @@
 <?php
 include 'config.php';
 
-//$setDevice="e-infor.fr";
-//$setPort="1123";
-//$conn = mysql_connect("localhost:3306", "freebox", "freebox") or die;
-//$db = mysql_select_db("chaine");
-
 $_GET["cmd"] = isset($_GET['cmd']) ? $_GET['nom'] : null ;
 $_GET["nom"] = isset($_GET['nom']) ? $_GET['nom'] : null ;
 $nombrut = isset($_GET['nom']) ? $_GET['nom'] : null ;
