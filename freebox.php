@@ -1,4 +1,5 @@
 <?php
+//test auto-update
 include 'config.php';
 
 $_GET["cmd"] = isset($_GET['cmd']) ? $_GET['nom'] : null ;
