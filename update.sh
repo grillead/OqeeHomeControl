@@ -1,6 +1,5 @@
 #!/bin/bash
 {
-rm -Rf freeboxandroidhomecontrol-main
 wget -O freeboxandroidhomecontrol.zip https://github.com/grillead/freeboxandroidhomecontrol/archive/main.zip
 unzip -o freeboxandroidhomecontrol.zip
 mv -f freeboxandroidhomecontrol-main/freebox.php /var/www/html/
@@ -11,5 +10,6 @@ mysql chaine -ufreebox -pfreebox < freeboxandroidhomecontrol-main/chaines.sql -f
 rm -f freeboxandroidhomecontrol.zip
 mv -f freeboxandroidhomecontrol-main/update.sh /home/freebox/
 chmod +x update.sh
+rm -Rf freeboxandroidhomecontrol-main
 exit
 }
