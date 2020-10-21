@@ -10,7 +10,7 @@ mysqladmin -ufreebox -pfreebox create chaine
 mysql chaine -ufreebox -pfreebox < freeboxandroidhomecontrol-main/chaines.sql -f
 rm -f freeboxandroidhomecontrol.zip
 mv -f freeboxandroidhomecontrol-main/update.sh /home/freebox/
-chmod +x update.sh
+sudo chmod +x update.sh
 rm -Rf freeboxandroidhomecontrol-main
 exit
 }
