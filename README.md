@@ -7,6 +7,8 @@ Nécessite :
   L'activation du mode développeurs et du Débogage USB sur la box
   
   La mise en place d'une VM sur le serveur delta pour faire tourné les outils adb,php,mysql( je pourrais fournir l'image pre-configurer apres une période de test)
+  Edit 21/10 : Liens vers la VM : http://bit.ly/freeboxhomecontrol/
+  Merci de joué le jeu et me faire un retour...
   
   La création d'un applet sur ifttt pour lancer les chaines avec leurs noms.
   
