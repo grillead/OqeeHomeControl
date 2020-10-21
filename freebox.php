@@ -11,6 +11,7 @@ $cmd = isset($_GET['cmd']) ? $_GET['nom'] : null ;
 shell_exec("adb connect '".$setDevice."':'".$setPort."'");
 usleep(500000);
 shell_exec("adb shell am start -n net.oqee.androidtv/.ui.main.MainActivity");
+usleep(500000);
 
 //echo $nom ;
 //----------------------------------------------------------------
