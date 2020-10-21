@@ -8,15 +8,14 @@ Nécessite :
   
   La mise en place d'une VM sur le serveur delta pour faire tourné les outils adb,php,mysql( je pourrais fournir l'image pre-configurer apres une période de test)
   <br/>Edit 21/10 : Liens vers la VM : http://bit.ly/freeboxhomecontrol/
-  <br/>Merci de joué le jeu et me faire un retour...
+  <br/>Merci de joué le jeu et me faire un retour : https://github.com/grillead/freeboxandroidhomecontrol/issues/1
   
   La création d'un applet sur ifttt pour lancer les chaines avec leurs noms.
    
 -----Partie Freebox Delta Serveur -----
-
+<br/>Assigner un bail dhcp au player pop (param par defaut dans la vm : 192.168.0.1 si autre ip modifier le fichier /var/www/html/config.php)
 <br/>Mettre en place l image de la VM et la demarrer (http://bit.ly/freeboxhomecontrol/)
-<br/>Assigner un bail dhcp à la VM.
-<br/>Assigner un bail dhcp au player pop (param par defaut dans la vm : 192.168.0.1)
+<br/>Assigner un bail dhcp à la VM + reboot vm
 
 Dans l interface freebox : Paramètre de la Freebox \ Gestion des ports => Ouvrir le port externe "1122 vers le port interne "1122" de la vm
 
@@ -40,9 +39,11 @@ Créer un applet
 
                 "Then That" WebHooks vers l url : http://ip_de_la_box:1122/freebox.php?nom={{TextField}}
                 
-                
-Pour ceux qui souhaitent créer leur propre serveur :
-<br/> Il vous faudra :
+A la fin de ces manips, votre "ami google" doit etre en mesure de comprendre et zapper sur la chaine demandée (ne pas oublier les reboot dans la procédure !)
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Pour ceux qui souhaitent créer leur propre serveur, il vous faudra :
 <br/>Apache2
 <br/>PHP5.6
 <br/>Mariadb
@@ -51,7 +52,7 @@ Pour ceux qui souhaitent créer leur propre serveur :
   
 edité le fichier config.php :
 
-<br/>$setDevice="ip_player"; //si serveur non local redirigé un port au choix vers le port 555 du player
+<br/>$setDevice="ip_player"; //si serveur non local redirigé un port au choix vers le port 5555 du player
 <br/>$setPort="port ADB vers le player"; //defaut : 5555
 <br/>$conn = mysql_connect("Adresse_Bdd:Port_Bdd", "user_Bdd", "pwd_Bdd") or die;
 <br/>$db = mysql_select_db("nom_Bdd");
