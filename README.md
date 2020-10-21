@@ -7,35 +7,30 @@ Nécessite :
   L'activation du mode développeurs et du Débogage USB sur la box
   
   La mise en place d'une VM sur le serveur delta pour faire tourné les outils adb,php,mysql( je pourrais fournir l'image pre-configurer apres une période de test)
-  Edit 21/10 : Liens vers la VM : http://bit.ly/freeboxhomecontrol/
-  Merci de joué le jeu et me faire un retour...
+  <br/>Edit 21/10 : Liens vers la VM : http://bit.ly/freeboxhomecontrol/
+  <br/>Merci de joué le jeu et me faire un retour...
   
   La création d'un applet sur ifttt pour lancer les chaines avec leurs noms.
-  
-  
+   
 -----Partie Freebox Delta Serveur -----
 
-Mettre en place l image de la VM et la demarrer (liens vers la vm à venir ultérieurement)
-
-Assigner un bail dhcp à la VM.
+<br/>Mettre en place l image de la VM et la demarrer (http://bit.ly/freeboxhomecontrol/)
+<br/>Assigner un bail dhcp à la VM.
+<br/>Assigner un bail dhcp au player pop (param par defaut dans la vm : 192.168.0.1)
 
 Dans l interface freebox : Paramètre de la Freebox \ Gestion des ports => Ouvrir le port externe "1122 vers le port interne "1122" de la vm
 
 -----Partie Player-----
 
 Activation mod dev : 
-
-Appuie 7 fois sur la touche "ok" sur le numeros de build dans la section "A propos"
+<br/>Appuie 7 fois sur la touche "ok" sur le numeros de build dans la section "A propos"
 
 Débogage USB:
-
-A activé dans le menu "Options pour les développeurs"
+<br/>A activé dans le menu "Options pour les développeurs"
 
 Apparaige serveur : 
-
-Un popup va s'afficher sur la box au moment de l envoie de la 1ere commande vocale,
-
-il faut cocher la case se souvenir et autoriser la connexion une 1ere fois.
+<br/>Un popup va s'afficher sur la box au moment de l envoie de la 1ere commande vocale,
+<br/>il faut cocher la case se souvenir et autoriser la connexion une 1ere fois.
 
 -----Création applet IFTTT -----
 
@@ -47,37 +42,21 @@ Créer un applet
                 
                 
 Pour ceux qui souhaitent créer leur propre serveur :
-
-Nécessaire : 
-
-  Apache2
+<br/> Il vous faudra :
+<br/>Apache2
+<br/>PHP5.6
+<br/>Mariadb
+<br/>ADB
+<br/>une copie de mon GIT : https://github.com/grillead/freeboxandroidhomecontrol/archive/main.zip
   
-  PHP5.6
-  
-  Mariadb
-  
-  ADB
-  
-  
-Dans le 
+edité le fichier config.php :
 
-config BDD + player : 
+<br/>$setDevice="ip_player"; //si serveur non local redirigé un port au choix vers le port 555 du player
+<br/>$setPort="port ADB vers le player"; //defaut : 5555
+<br/>$conn = mysql_connect("Adresse_Bdd:Port_Bdd", "user_Bdd", "pwd_Bdd") or die;
+<br/>$db = mysql_select_db("nom_Bdd");
 
-edité le fichier config.php
-
-
-$setDevice="ip_publique_box";
-
-$setPort="port ADB vers le player";
-
-$conn = mysql_connect("Adresse_Bdd:Port_Bdd", "user_Bdd", "pwd_Bdd") or die;
-
-$db = mysql_select_db("nom_Bdd");
-
-
-Le port externe pour etre definie au choix, mais il devra imperativement rediriger vers le port 5555 du player
-
-Créer ensuite une commande IFTTT Google Assistant type phrase with text incredient redirigant vers la page web de votre serveur
+Créer ensuite une commande IFTTT Google Assistant type phrase with text incredient redirigant vers la page web de votre serveur http://@ipserveur/freebox.php?nom={{TextFiel}}
 
 
 Merci a Aymkdn pour m'avoir donné l idée en voyant son assistant cloud (https://assistant.kodono.info/freebox/) de travailler sur le meme genre en compatible androidtv et merci pour son partage de la base sql afin de faire la relation nom<>numeros.
