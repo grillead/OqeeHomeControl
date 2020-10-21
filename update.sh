@@ -11,4 +11,5 @@ mysql chaine -ufreebox -pfreebox < freeboxandroidhomecontrol-main/chaines.sql -f
 rm -f freeboxandroidhomecontrol.zip
 mv -f freeboxandroidhomecontrol-main/update.sh /home/freebox/
 chmod +x update.sh
+exit
 }
