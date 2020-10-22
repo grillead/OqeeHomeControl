@@ -8,7 +8,7 @@ Nécessite :
   
   La mise en place d'une VM sur le serveur delta pour faire tourné les outils adb,php,mysql( je pourrais fournir l'image pre-configurer apres une période de test)
   <br/>Edit 21/10 : Liens vers la VM : http://bit.ly/freeboxhomecontrol/ (identifiant: freebox / pwd: freebox )
-  <br/>Merci de joué le jeu et me faire un retour : https://github.com/grillead/freeboxandroidhomecontrol/issues/1
+  <br/>Merci de jouer le jeu et me faire un retour : https://github.com/grillead/freeboxandroidhomecontrol/issues/1
   
   La création d'un applet sur ifttt pour lancer les chaines avec leurs noms.
    
