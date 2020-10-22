@@ -43,7 +43,12 @@ A la fin de ces manips, votre "ami google" doit etre en mesure de comprendre et 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-Pour ceux qui souhaitent créer leur propre serveur, il vous faudra :
+Pour me remercier, buy me a beer ;) : <a href="http://paypal.me/adriengrillet"><img src="https://www.pngarts.com/files/4/Paypal-Donate-PNG-Transparent-Image.png" width="100"></a> 
+
+
+Pour ceux qui souhaitent créer leur propre serveur
+--------
+il vous faudra :
 <br/>Apache2
 <br/>PHP5.6
 <br/>Mariadb
