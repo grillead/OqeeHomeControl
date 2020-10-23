@@ -13,7 +13,7 @@ Nécessite :
   La création d'un applet sur ifttt pour lancer les chaines avec leurs noms.
    
 -----Partie Freebox Delta Serveur -----
-<br/>Assigner un bail dhcp au player pop (param par defaut dans la vm : 192.168.0.1 si autre ip modifier le fichier /var/www/html/config.php)
+<br/>Assigner un bail dhcp au player pop (param par defaut dans la vm : 192.168.0.1 si autre ip modifier le fichier /var/www/html/config.php) + reboot player
 <br/>Mettre en place l image de la VM et la demarrer (http://bit.ly/freeboxhomecontrol/)
 <br/>Assigner un bail dhcp à la VM + reboot vm
 
