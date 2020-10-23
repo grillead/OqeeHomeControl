@@ -9,9 +9,7 @@ $cmd = isset($_GET['cmd']) ? $_GET['nom'] : null ;
 
 //Connection au player
 shell_exec("adb connect '".$setDevice."':'".$setPort."'");
-usleep(500000);
-shell_exec("adb shell am start -n net.oqee.androidtv/.ui.main.MainActivity");
-usleep(500000);
+usleep(800000);
 
 //echo $nom ;
 //----------------------------------------------------------------
@@ -50,6 +48,8 @@ goto zap ;
 
 // Changement chaine sur le player
 zap:
+shell_exec("adb shell am start -n net.oqee.androidtv/.ui.main.MainActivity");
+usleep(300000);
 shell_exec("adb shell input text '".$num."' ");
 shell_exec("adb disconnect");
 
