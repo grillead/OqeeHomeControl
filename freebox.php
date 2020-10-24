@@ -31,7 +31,19 @@ goto zap ;
 
 if ($nombrut != NULL) 
 {
-//req chaine<>numeros convertie les espace %20 en %
+
+//réecriture chaine
+if (strpos($nombrut, 'musique') !== false) {
+$nombrut = str_replace("musique", "music", $nombrut );
+}
+if (strpos($nombrut, 'plus 1') !== false) {
+$nombrut = str_replace("plus 1", "+1", $nombrut );
+}
+if (strpos($nombrut, 'mangas') !== false) {
+$nombrut = str_replace("mangas", "manga", $nombrut );
+}
+
+ //req chaine<>numeros convertie les espace %20 en %
 echo $nombrut;
 $nom = str_replace(" ", "%", $nombrut );
 echo $nom ;
