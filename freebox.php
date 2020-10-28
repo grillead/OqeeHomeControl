@@ -42,7 +42,9 @@ $nombrut = str_replace("plus 1", "+1", $nombrut );
 if (strpos($nombrut, 'mangas') !== false) {
 $nombrut = str_replace("mangas", "manga", $nombrut );
 }
-
+if (strpos($nombrut, 'sur ') !== false) {
+$nombrut = str_replace("sur ", "", $nombrut );
+}
  //req chaine<>numeros convertie les espace %20 en %
 echo $nombrut;
 $nom = str_replace(" ", "%", $nombrut );
