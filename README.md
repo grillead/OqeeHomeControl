@@ -43,10 +43,10 @@ A la fin de ces manips, votre "ami google" doit etre en mesure de comprendre et 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-Pour me remercier, buy me a beer ;) : <a href="http://paypal.me/adriengrillet"><img src="https://www.pngarts.com/files/4/Paypal-Donate-PNG-Transparent-Image.png" width="100"></a> 
+Pour me remercier, buy me a beer ;) : <a href="http://paypal.me/adriengrillet"><img src="https://www.pngarts.com/files/4/Paypal-Donate-PNG-Transparent-Image.png" width="100"></a> ou 1 Ricard ^^
 
 
-Pour ceux qui souhaitent créer leur propre serveur
+Pour ceux qui souhaitent créer leur propre serveur (à la place de la VM)
 --------
 il vous faudra :
 <br/>Apache2
