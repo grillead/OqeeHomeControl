@@ -14,7 +14,7 @@ Nécessite :
    
 -----Partie Freebox Delta Serveur -----
 <br/>Assigner un bail dhcp au player pop (param par defaut dans la vm : 192.168.0.1 si autre ip modifier le fichier /var/www/html/config.php) + reboot player
-<br/>Mettre en place l image de la VM et la demarrer (http://bit.ly/freeboxhomecontrol/)
+<br/>Mettre en place l image de la VM et la demarrer (http://bit.ly/freeboxhomecontrol)
 <br/>Assigner un bail dhcp à la VM + reboot vm
 
 Dans l interface freebox : Paramètre de la Freebox \ Gestion des ports => Ouvrir le port externe "1122 vers le port interne "1122" de la vm
