@@ -1,7 +1,9 @@
 # Freebox Android Home Control
 
 Plugin pour contrôler la freebox POP avec Google Home (Changement de chaine via le Nom)
+
 (Une version script mini4k pourrait eventuellement se faire, mais n'ayant pas de mini4k à la maison je ne peut tester ni dev sans aide utilisateurs...)
+
 Les fonctions volume/extiction sont gérer en natif via google(grace à l option Chromecast) si vous avez ajouter la box à votre compte home.
 
 Pre-requis : 
