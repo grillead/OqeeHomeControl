@@ -62,8 +62,7 @@ goto zap ;
 
 // Changement chaine sur le player
 zap:
-shell_exec("adb shell am start -n net.oqee.androidtv/.ui.main.MainActivity");
-usleep(300000);
+shell_exec("adb shell 'dumpsys activity activities | grep mResumedActivity | grep oqee | if (($?==0));then am start -n net.oqee.androidtv/.ui.main.MainActivity;usleep 300000;fi'");
 shell_exec("adb shell input text '".$num."' ");
 shell_exec("adb disconnect");
 
