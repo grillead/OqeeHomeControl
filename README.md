@@ -46,10 +46,13 @@ Créer un applet
                 "Then That" WebHooks vers l url : http://ip_de_la_box:1122/freebox.php?nom={{TextField}}
                 
 A la fin de ces manips, votre "ami google" doit etre en mesure de comprendre et zapper sur la chaine demandée (ne pas oublier les reboot dans la procédure !)
+
+**EDIT 21/01/2021 ** Pour ceux qui ont un soucis pour allumé la box apres son arret (veille profondre) l'option est desactivable dans les menus de la pop afin que pouvoir lancer des cast ou l allumer avec la commande "Ok GOOGLE, allume la freebox" (ou autre si vous avez changer son nom a l install)
+
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-Pour me remercier, buy me a beer ;) : <a href="http://paypal.me/adriengrillet"><img src="https://www.pngarts.com/files/4/Paypal-Donate-PNG-Transparent-Image.png" width="100"></a> ou 1 Ricard ^^
+Si jamais un don vous tente ;) : <a href="http://paypal.me/adriengrillet"><img src="https://www.pngarts.com/files/4/Paypal-Donate-PNG-Transparent-Image.png" width="100"></a>
 
 
 Pour ceux qui souhaitent créer leur propre serveur (à la place de la VM)
