@@ -1,10 +1,10 @@
 <?php
 include 'config.php';
 
-$_GET["cmd"] = isset($_GET['cmd']) ? $_GET['nom'] : null ;
+$_GET["cmd"] = isset($_GET['cmd']) ? $_GET['cmd'] : null ;
 $_GET["nom"] = isset($_GET['nom']) ? $_GET['nom'] : null ;
 $nombrut = isset($_GET['nom']) ? $_GET['nom'] : null ;
-$cmd = isset($_GET['cmd']) ? $_GET['nom'] : null ;
+$cmd = isset($_GET['cmd']) ? $_GET['cmd'] : null ;
 
 
 //Connection au player
@@ -26,6 +26,7 @@ break;
 if ($_GET["cmd"] != NULL)
 {
 $num=$_GET["cmd"];
+echo $cmd;	
 goto zap ;
 }
 
