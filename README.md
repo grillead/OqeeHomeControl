@@ -43,7 +43,9 @@ Créer un applet
 
                 "If This" Google Assistant > Phrase with TEXT incredient  (exemple chez moi : zappe sur la chaine $)
 
-                "Then That" WebHooks vers l url : http://ip_de_la_box:1122/freebox.php?nom={{TextField}}
+                "Then That" WebHooks vers l url : http://ip_externe_box:1122/freebox.php?nom={{TextField}}
+                
+ip_externe_box : votre adresse ip internet, si besoin : http://monip.org/              
                 
 A la fin de ces manips, votre "ami google" doit etre en mesure de comprendre et zapper sur la chaine demandée (ne pas oublier les reboot dans la procédure !)
 
@@ -60,7 +62,6 @@ Pour ceux qui souhaitent créer leur propre serveur (à la place de la VM)
 il vous faudra :
 <br/>Apache2
 <br/>PHP5.6
-<br/>Mariadb
 <br/>ADB
 <br/>une copie de mon GIT : https://github.com/grillead/freeboxandroidhomecontrol/archive/main.zip
   
@@ -68,8 +69,7 @@ edité le fichier config.php :
 
 <br/>$setDevice="ip_player"; //si serveur non local redirigé un port au choix vers le port 5555 du player
 <br/>$setPort="port ADB vers le player"; //defaut : 5555
-<br/>$conn = mysql_connect("Adresse_Bdd:Port_Bdd", "user_Bdd", "pwd_Bdd") or die;
-<br/>$db = mysql_select_db("nom_Bdd");
+
 
 Créer ensuite une commande IFTTT Google Assistant type phrase with text incredient redirigant vers la page web de votre serveur http://@ipserveur/freebox.php?nom={{TextFiel}}
 
