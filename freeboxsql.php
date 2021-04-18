@@ -1,69 +1,121 @@
 <?php
+
 include 'config.php';
 
-$_GET["cmd"] = isset($_GET['cmd']) ? $_GET['nom'] : null ;
-$_GET["nom"] = isset($_GET['nom']) ? $_GET['nom'] : null ;
+$debug = false;
+$displayinfos = true;
+
+if ($debug == true)
+{
+	ini_set('display_errors', 1);
+	ini_set('display_startup_errors', 1);
+	error_reporting(E_ALL);
+}
+
 $nombrut = isset($_GET['nom']) ? $_GET['nom'] : null ;
-$cmd = isset($_GET['cmd']) ? $_GET['nom'] : null ;
 
+$num = null;
 
-//Connection au player
-shell_exec("adb connect '".$setDevice."':'".$setPort."'");
-usleep(800000);
+//---------------------------------------------------------------
 
-//echo $nom ;
-//----------------------------------------------------------------
-// Variable pour lancement d appli :
- 
-if ($_GET["cmd"] == "mycanal") 
+echo "<h1> Freebox Player POP Remote Control </h1>";
+
+//Input number information
+if (is_numeric($nombrut))
 {
-shell_exec('adb shell monkey -p com.canal.android.canal 1');
-break;
+	$num = $nombrut;
+	if ($displayinfos == true)
+	{
+		echo "<strong> Change via NUM </strong>";
+		echo '<br/><br/>';
+		echo "Channel number : ".$num;
+		echo '<br/><br/>';
+	}
 }
-//----------------------------------------------------------------
 
-//Verif si commande avec numeros ou nom de chaine
-if ($_GET["cmd"] != NULL)
+//Input texte information
+if ($nombrut !== NULL && !is_numeric($nombrut)) 
 {
-$num=$_GET["cmd"];
-goto zap ;
+	//Format channel
+	if (strpos($nombrut, 'musique') !== false) 
+	{
+		$nombrut = str_replace("musique", "music", $nombrut );
+	}
+	if (strpos($nombrut, 'plus 1') !== false) 
+	{
+		$nombrut = str_replace("plus 1", "+1", $nombrut );
+	}
+	if (strpos($nombrut, 'mangas') !== false) 
+	{
+		$nombrut = str_replace("mangas", "manga", $nombrut );
+	}
+	if (strpos($nombrut, 'sur ') !== false) 
+	{
+		$nombrut = str_replace("sur ", "", $nombrut );
+	}
+
+	//Convert spaces %20 to %
+	$nom = str_replace(" ", "%", $nombrut );
+	
+	//Request
+	//$sqlnum = "SELECT `free` FROM `chaines` WHERE `nom` like '$nom' ";
+	$sqlnum = "SELECT `free` FROM `chaines` WHERE `nom` like :nom ";
+
+	$stmt = $dbh->prepare($sqlnum);
+	$stmt->execute(array(':nom' => $nom));
+	$chaine = $stmt->fetch(PDO::FETCH_ASSOC);
+
+	$num = $chaine['free'];
+
+	if ($displayinfos == true)
+	{
+		echo "<strong> Change via NOM </strong>";
+		echo '<br/><br/>';
+		echo "Raw channel number : ".$nombrut;
+		echo '<br/><br/>';
+		echo "Channel number : ".$nom;
+		echo '<br/><br/>';
+		echo "Request: ".$sqlnum;
+		echo '<br/><br/>';
+		echo "Channel: ".$num;
+		echo '<br/><br/>';		
+	}
 }
 
-if ($nombrut != NULL) 
+
+// Change channel
+if ($num != NULL) 
 {
+	if ($displayinfos == true)
+	{
+		echo "<strong> Change channel </strong>";
+		echo '<br/><br/>';
+	}
 
-//réecriture chaine
-if (strpos($nombrut, 'musique') !== false) {
-$nombrut = str_replace("musique", "music", $nombrut );
-}
-if (strpos($nombrut, 'plus 1') !== false) {
-$nombrut = str_replace("plus 1", "+1", $nombrut );
-}
-if (strpos($nombrut, 'mangas') !== false) {
-$nombrut = str_replace("mangas", "manga", $nombrut );
-}
-if (strpos($nombrut, 'sur ') !== false) {
-$nombrut = str_replace("sur ", "", $nombrut );
-}
- //req chaine<>numeros convertie les espace %20 en %
-echo $nombrut;
-$nom = str_replace(" ", "%", $nombrut );
-echo $nom ;
+	//Connexion to the player
+	$outputconnection = shell_exec("adb connect '".$setDevice."':'".$setPort."'");
+	usleep(800000);
+	if ($displayinfos == true)
+	{
+		echo "Connection player : ".$outputconnection;
+		echo '<br/><br/>';
+	}
 
-$sqlnum = "SELECT `free` FROM `chaines` WHERE `nom` like '$nom' ";
-echo $sqlnum;
-$resultnum = mysql_query($sqlnum)  ;
-$chaine = mysql_fetch_array($resultnum);
-$num = $chaine['free'];
-echo $num;
-goto zap ;
+	// Test if Free application is already running
+	$oqee = shell_exec("adb -s '".$setDevice."' shell 'dumpsys activity activities | grep mResumedActivity | grep oqee '");
+	if ($oqee == NULL)
+	{
+		shell_exec("adb -s '".$setDevice."' shell am start -n net.oqee.androidtv/.ui.main.MainActivity; usleep 300000;");
+	}
+
+	//Change channel
+	shell_exec("adb -s '".$setDevice."' shell input text '".$num."' ");
+	if ($displayinfos == true)
+	{
+		echo "Channel changed to: ".$num;
+		echo '<br/><br/>';
+	}
+	shell_exec("adb -s '".$setDevice."' disconnect");
 }
-
-
-// Changement chaine sur le player
-zap:
-shell_exec("adb shell 'dumpsys activity activities | grep mResumedActivity | grep oqee ; if (($?==1));then am start -n net.oqee.androidtv/.ui.main.MainActivity;usleep 300000;fi'");
-shell_exec("adb shell input text '".$num."' ");
-shell_exec("adb disconnect");
 
 ?>
