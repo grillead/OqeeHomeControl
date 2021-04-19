@@ -19,6 +19,7 @@ service apache2 restart
 rm -f freeboxandroidhomecontrol.zip
 mv -f freeboxandroidhomecontrol-main/update.sh /home/freebox/
 rm -Rf freeboxandroidhomecontrol-main
+sudo ./update.sh
 exit
 }
 
