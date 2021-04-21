@@ -42,7 +42,7 @@ Pre-requis :
                 "Then That" WebHooks vers l url : http://ip_externe_box:port-externe/freebox.php?nom={{TextField}}
                 
 </br><strong>ip_externe_box</strong> : votre adresse ip internet ou reverse DNS, si besoin : http://monip.org/
-</br><strong>port-externe</strong> : le port ouvert sur la freebox vers le port 1122 de la VM
+</br><strong>port-externe</strong> : le port ouvert sur la freebox (défini à l'etape 4/) vers le port 1122 de la VM
                 
 A la fin de ces manips, votre "ami google" doit etre en mesure de comprendre et zapper sur la chaine demandée (ne pas oublier les reboot dans la procédure !)
 
