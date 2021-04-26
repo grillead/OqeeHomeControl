@@ -46,9 +46,9 @@ Pre-requis :
                 
 A la fin de ces manips, votre "ami google" doit etre en mesure de comprendre et zapper sur la chaine demandée (ne pas oublier les reboot dans la procédure !)
 
-<strong><font color=red>**EDIT 21/01/2021 ** Pour ceux qui ont un soucis pour allumé la box apres son arret (veille profondre) l'option est desactivable dans les menus de la pop afin que pouvoir lancer des cast ou l allumer avec la commande "Ok GOOGLE, allume la freebox" (ou autre si vous avez changer son nom a l install)</strong></font>
+<strong>**EDIT 21/01/2021 ** </STRONG> Pour ceux qui ont un soucis pour allumer la box apres son arret (veille profonde) l'option est désactivable dans les menus de la pop : <STRONG>( Paramètres > Préférence relative à l'appareil > Paramètres avancés > Economie d'energie > Veille profonde : Désactivé )</STRONG> afin que pouvoir lancer des cast ou l allumer avec la commande "Ok GOOGLE, allume la freebox" (ou autre si vous avez changer son nom a l install)
 
-! <strong>**EDIT 21/04/2021 ** En cas de soucis de perte de connexion entre google et votre freebox, penser à vérifier votre adresse ip pour la requette IFTTT, il se peut que celle-ci soit différente suite à un reboot du freebox serveur (possible de demander une ip fixe via "Espace Abonné > Ma freebox > Demander une adresse IP fixe V4 full-stack" ET/OU d'utiliser un reverse dns, option disponoble aussi via "Espace Abonné > Ma Freebox > Personnaliser mon reverse DNS > Entrée DNS personnalisée" )</strong>
+<strong>**EDIT 21/04/2021 ** </STRONG> En cas de soucis de perte de connexion entre google et votre freebox, penser à vérifier votre adresse ip pour la requette IFTTT, il se peut que celle-ci soit différente suite à un reboot du freebox serveur (possible de demander une ip fixe via "Espace Abonné > Ma freebox > Demander une adresse IP fixe V4 full-stack" ET/OU d'utiliser un reverse dns, option disponoble aussi via "Espace Abonné > Ma Freebox > Personnaliser mon reverse DNS > Entrée DNS personnalisée" )
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
