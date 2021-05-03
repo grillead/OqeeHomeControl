@@ -14,6 +14,7 @@ Pre-requis :
   
   <br/>Liens vers la VM : http://bit.ly/freeboxhomecontrol (identifiant: freebox / pwd: freebox ) (Edit 24/11 MAJ Vm avec ip player : 192.168.0.1 par défaut)
   <br/>Merci de jouer le jeu et me faire un retour : https://github.com/grillead/freeboxandroidhomecontrol/issues/1
+  <br/><STRONG>Pour mettre à jour la vm avec les derniers correctifs il faut la redémarrer 2 fois ou lancer le script update ( sudo ./update.sh ) sauf si déjà redemarrer 1 fois depuis le 18 avril, dans ce cas 1 seul reboot ou lancement de script et nécessaire </strong>
   
 -----Partie Freebox Delta Serveur -----
 <br/><strong>1/</strong> Assigner un bail dhcp au player pop (param par defaut dans la vm : 192.168.0.1 si autre ip modifier le fichier /var/www/html/config.php) + reboot player
