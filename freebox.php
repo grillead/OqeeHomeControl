@@ -5,7 +5,7 @@ $_GET["cmd"] = isset($_GET['cmd']) ? $_GET['cmd'] : null ;
 $_GET["nom"] = isset($_GET['nom']) ? $_GET['nom'] : null ;
 $nombrut = isset($_GET['nom']) ? $_GET['nom'] : null ;
 $cmd = isset($_GET['cmd']) ? $_GET['cmd'] : null ;
-$count == 0 ;
+$count = 0 ;
 $debug = false;
 $displayinfos = true;
 
@@ -25,7 +25,7 @@ usleep(800000);
 if ($_GET["cmd"] == "mycanal") 
 {
 shell_exec('adb shell monkey -p com.canal.android.canal 1');
-break;
+exit;
 }
 
 
@@ -52,15 +52,7 @@ goto zap ;
 
 //Channel rewrite
 
-if (strpos($nombrut, 'musique') !== false) {
-$nombrut = str_replace("musique", "Music", $nombrut );
-}
-if (strpos($nombrut, 'plus 1') !== false) {
-$nombrut = str_replace("plus 1", "+1", $nombrut );
-}
-if (strpos($nombrut, 'manga') !== false) {
-$nombrut = str_replace("manga", "mangas", $nombrut );
-}
+include 'rewrite.php';
 
 //Find channel uuid
 retry:
@@ -79,7 +71,8 @@ goto suite;
 $nombrut = str_replace(" ", "", $nombrut );
 if ($count == 2) { 
 echo "<strong> Channel not found </strong>";
-break ; 
+echo $nombrut;
+exit ; 
 }
 
 $count = 1;
