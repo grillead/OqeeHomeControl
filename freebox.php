@@ -19,7 +19,7 @@ if ($debug == true)
 
 //Connexion
 shell_exec("adb connect '".$setDevice."':'".$setPort."'");
-usleep(800000);
+usleep(500000);
 
 // Var for launching apps :
 if ($_GET["cmd"] == "mycanal") 
@@ -38,11 +38,11 @@ $nombrut = str_replace("sur ", "", $nombrut );
 }
 //Gestion play/pause	
 if (strpos($nombrut, 'pause') !== false) {
-shell_exec("adb shell input keyevent KEYCODE_DPAD_CENTER | adb shell input keyevent KEYCODE_DPAD_CENTER");
+shell_exec("adb shell input keyevent KEYCODE_DPAD_CENTER | usleep 300000 | adb shell input keyevent KEYCODE_DPAD_CENTER");
 shell_exec("adb disconnect");
 }
 if (strpos($nombrut, 'play') !== false) {
-shell_exec("adb shell input keyevent KEYCODE_DPAD_CENTER | adb shell input keyevent KEYCODE_BACK");
+shell_exec("adb shell input keyevent KEYCODE_DPAD_CENTER | usleep 300000 | adb shell input keyevent KEYCODE_BACK");
 shell_exec("adb disconnect");
 }   
 //Check Is channel numbers or channel name
