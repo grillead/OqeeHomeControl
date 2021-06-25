@@ -30,9 +30,8 @@ exit;
 
 
 echo "<h1><div align=center> Freebox Player POP Remote Control</div> </h1>";
-if ($nombrut != NULL) 
-
-{
+if ($nombrut != NULL){
+	
 if (strpos($nombrut, 'sur ') !== false) {
 $nombrut = str_replace("sur ", "", $nombrut );
 }
@@ -42,13 +41,13 @@ shell_exec("adb shell input keyevent KEYCODE_DPAD_CENTER | usleep 300000 | adb s
 shell_exec("adb disconnect");
 echo "<strong> PAUSE </strong>";
 exit;
-
+}
 if (strpos($nombrut, 'play') !== false) {
 shell_exec("adb shell input keyevent KEYCODE_DPAD_CENTER");
 shell_exec("adb disconnect");
 echo "<strong> PLAY </strong>";
 exit;
- 
+} 
 //Check Is channel numbers or channel name
 if (is_numeric($nombrut))
 {
