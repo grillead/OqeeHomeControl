@@ -39,11 +39,11 @@ $nombrut = str_replace("sur ", "", $nombrut );
 }
 //Gestion play/pause	
 if (strpos($nombrut, 'pause' !== false) {
-shell_exec("adb shell input KEYCODE_MEDIA_PLAY_PAUSE");
+shell_exec("adb shell input adb shell input keyevent KEYCODE_DPAD_CENTER | adb shell input keyevent KEYCODE_DPAD_CENTER");
 shell_exec("adb disconnect");
 }
 if (strpos($nombrut, 'play' !== false) {
-shell_exec("adb shell input KEYCODE_MEDIA_PLAY_PAUSE");
+shell_exec("adb shell input adb shell input keyevent KEYCODE_DPAD_CENTER | adb shell input keyevent KEYCODE_DPAD_CENTER");
 shell_exec("adb disconnect");
 }   
 //Check Is channel numbers or channel name
