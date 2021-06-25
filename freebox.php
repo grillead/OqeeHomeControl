@@ -31,11 +31,21 @@ exit;
 
 echo "<h1><div align=center> Freebox Player POP Remote Control</div> </h1>";
 if ($nombrut != NULL) 
+KEYCODE_MEDIA_PLAY_PAUSE
+
 {
 if (strpos($nombrut, 'sur ') !== false) {
 $nombrut = str_replace("sur ", "", $nombrut );
 }
-
+//Gestion play/pause	
+if (strpos($nombrut, 'pause' !== false) {
+shell_exec("adb shell input KEYCODE_MEDIA_PLAY_PAUSE");
+shell_exec("adb disconnect");
+}
+if (strpos($nombrut, 'play' !== false) {
+shell_exec("adb shell input KEYCODE_MEDIA_PLAY_PAUSE");
+shell_exec("adb disconnect");
+}   
 //Check Is channel numbers or channel name
 if (is_numeric($nombrut))
 {
