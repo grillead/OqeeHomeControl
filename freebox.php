@@ -40,11 +40,15 @@ $nombrut = str_replace("sur ", "", $nombrut );
 if (strpos($nombrut, 'pause') !== false) {
 shell_exec("adb shell input keyevent KEYCODE_DPAD_CENTER | usleep 300000 | adb shell input keyevent KEYCODE_DPAD_CENTER");
 shell_exec("adb disconnect");
-}
+echo "<strong> PAUSE </strong>";
+exit;
+
 if (strpos($nombrut, 'play') !== false) {
-shell_exec("adb shell input keyevent KEYCODE_DPAD_CENTER | usleep 300000 | adb shell input keyevent KEYCODE_BACK");
+shell_exec("adb shell input keyevent KEYCODE_DPAD_CENTER");
 shell_exec("adb disconnect");
-}   
+echo "<strong> PLAY </strong>";
+exit;
+ 
 //Check Is channel numbers or channel name
 if (is_numeric($nombrut))
 {
