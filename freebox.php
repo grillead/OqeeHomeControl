@@ -73,7 +73,7 @@ if ($count == 1) { $count = 2 ; }
 $json1 = file_get_contents('http://mafreebox.freebox.fr/api/v3/tv/channels');
 $data1 = json_decode($json1);
 foreach ($data1->result as $item1) {
-	if (strcasecmp($item1->name, $nombrut) == 0 ){
+	if (strcasecmp($item1->name, $nombrut) == 0 AND $item1->available =="true"){
 	    $uuid = $item1->uuid;
 	echo '</br>';
 goto suite;
