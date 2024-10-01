@@ -1,4 +1,10 @@
-# Freebox Android Home Control
+# Oqee Home Control
+News du 01/10/2024 :
+Résurrection du projet et renouveau, ayant abandonné mon player pop pour l'appli oqee sur ma smartv, j'ai décidé de reprendre le projet afin de faire fonctionner celui ci via un conteneur Docker et un script google sans certitude de faisabilité pour le moment, mais je mettrais a jour la doc et le code en fonction de l'avancement.
+
+-------------Ancien Readme--------------
+
+# Freebox  Home Control
 
 Plugin pour contrôler la freebox POP avec Google Home (Changement de chaine via le Nom ou le numéros)
 
